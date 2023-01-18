@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/logo.svg">
+    <title>Anjosia Coffee</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Anjosia Coffee</h2>
+            </div>
+             <div class="search">
+                <form action="/barang_keluar/search" method="get">
+                <input type="search" name="nama_produk"  placeholder="Search Nama Produk">
+                <label for="search"> <i class="fas fa-search"></i></label>
+                </form>
+            </div>
+            <div class="user"><a href="/login">
+                <img src="/img/user.png" alt=""></a>
+            </div>
+         </div>         
+         <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/admin">
+                       <i   class="fas fa-home"></i>
+                       <div>Dashboard</div>
+                    </a>
+                </li>
+                <div class="data">Data Master</div>          
+                <li>
+                    <a href="/user">
+                       <i   class="fas fa-users"></i>
+                       <div>User</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/produk">
+                       <i   class="fas fa-folder"></i>
+                       <div>Barang</div>
+                    </a>
+                </li>
+                <div class="data">Transaksi</div>          
+                <li>
+                    <a href="/barang_masuk">
+                       <i   class="fas fa-download"></i>
+                       <div>Barang Masuk</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/barang_keluar">
+                       <i   class="fas fa-upload"></i>
+                       <div>Barang Keluar</div>
+                    </a>
+                </li>
+                <div class="data">Laporan</div>          
+                <li>
+                    <a href="/cetak">
+                       <i   class="fas fa-print"></i>
+                       <div>Cetak Laporan</div>
+                    </a>
+                </li>
+            </ul>
+         </div>         
+         <div class="main">
+            <div class="cards1">
+                <div class="card-back">
+                <div class="card2">
+                    <h1>Data Barang Keluar</h1>
+                    <button class="btn-tambah">
+                        <i class="fas fa-plus"></i>
+                        <a href="barang_keluar/add">Tambah Barang</a>
+                    </button>
+                </div>
+                </div>
+                
+                
+            </div> 
+            <div class="card-body">
+                <div class="table">
+                     <% if (datas.length > 0) { %>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Barang</th>
+                                    <th>Tanggal Keluar</th>
+                                    <th>Stok keluar</th>
+                                    <th>Aksi</th>                                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% datas.forEach((data, produk) => { %>
+                                <tr>
+                                    <td><%=data.id_keluar%></td>
+                                    <td><%=data.nama_produk%></td>
+                                    <td><%=data.tgl_keluar.toLocaleDateString("id-ID")%></td> 
+                                    <td><%=data.stok_keluar%></td> 
+                                    <td>
+                                      <nav class="area-aksi">
+                                            <button class="btn btn-edit"><a href="/barang_keluar/edit/<%= data.id_keluar %>" class="btn-edits">
+                                                <i class="fa-regular fa-pen-to-square"></i></a></button>
+                                            <button class="btn btn-hapus">
+                                                <a href="/barang_keluar/delete/<%= data.id_keluar%>" class="btn-deletes">
+                                                <i class="fa-solid fa-trash-can"></i></a></button>
+                                        </nav>
+                                    </td>                                              
+                                </tr>
+                                <% }) %>                                
+                            </tbody>
+                        </table>
+                         <% } %>
+                   </div>     
+
+                </div>          
+         </div>
+</body>
+</html>

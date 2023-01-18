@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.svg">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Anjosia Coffee</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Anjosia Coffee</h2>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="search here">
+                <label for="search"> <i class="fas fa-search"></i></label>
+            </div>
+            <div class="user"><a>
+                <img src="img/user.png" alt=""></a>
+            </div>
+         </div>         
+         <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/admin">
+                       <i   class="fas fa-home"></i>
+                       <div>Dashboard</div>
+                    </a>
+                </li>
+                <div class="data">Data Master</div>          
+                <li>
+                    <a href="/user">
+                       <i   class="fas fa-users"></i>
+                       <div>User</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/produk">
+                       <i   class="fas fa-folder"></i>
+                       <div>Barang</div>
+                    </a>
+                </li>
+                <div class="data">Transaksi</div>          
+                <li>
+                    <a href="/barang_masuk">
+                       <i   class="fas fa-download"></i>
+                       <div>Barang Masuk</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/barang_keluar">
+                       <i   class="fas fa-upload"></i>
+                       <div>Barang Keluar</div>
+                    </a>
+                </li>
+                <div class="data">Laporan</div>          
+                <li>
+                    <a href="#">
+                       <i   class="fas fa-print"></i>
+                       <div>Cetak Laporan</div>
+                    </a>
+                </li>
+            </ul>
+         </div>         
+         <div class="main">
+            <div class="cards1">
+                <div class="card-back">
+                <div class="card2">
+                    <h1>Cetak Laporan Barang</h1>
+                </div>
+                </div>
+                
+            </div> 
+
+             <div class="card-body">
+                <div class="table">
+                    <div class="table-responsive">
+                       
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Table</th>
+                                    <th>Aksi</th>                                                
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                <tr>
+                                    <td>1</td>
+                                    <td>Table User</td> 
+                                     <td>
+                                            <button class="btn-cetak"><a href="/user-cetak">Cetak Laporan Data</a></button>
+                                       </td>                                               
+                                </tr>
+                               <tr>
+                                    <td>2</td>
+                                    <td>Table Barang</td> 
+                                     <td>
+                                            <button class="btn-cetak"><a href="/cetak-barang">Cetak Laporan Data</a></button>
+                                       </td>                                               
+                                </tr>
+                                 <tr>
+                                    <td>3</td>
+                                    <td>Table Barang Masuk</td> 
+                                     <td>
+                                            <button class="btn-cetak"><a href="/cetak-barang-masuk">Cetak Laporan Data</a></button>
+                                       </td>                                               
+                                </tr>
+                                 <tr>
+                                    <td>4</td>
+                                    <td>Table Barang Keluar</td> 
+                                     <td>
+                                            <button class="btn-cetak"><a href="/cetak-barang-keluar">Cetak Laporan Data</a></button>
+                                       </td>                                               
+                                </tr>
+                            </tbody>
+                        </table>
+                   </div>                 
+                </div>          
+         </div>
+         
+
+</body>
+</html>

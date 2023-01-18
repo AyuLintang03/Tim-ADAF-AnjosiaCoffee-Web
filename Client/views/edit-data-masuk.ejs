@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/logo.svg">
+<style>    .btn {
+    border-radius: var(--set_padding);
+    border: var(--set_border);
+    outline: 0;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.area-aksi
+{
+    width: 40px;
+    display: flex;
+}
+
+.input{
+    transform: translate(400px, 50px);
+    width: 550px;
+    height: 550px;
+    background: #fff ;
+    border-radius: 15px;
+}
+
+body{
+	background:#B48C5B;
+}
+
+.input .font1{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.jk {
+    padding: 50px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.sjk {
+    transform: translate(50px, -40px);
+    height: 30px;
+    width: 430px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.08);
+}
+.k {
+    transform: translate(50px, -20px);
+    font-size: 12px;
+    font-weight: bold;
+}
+.sk {
+    transform: translate(50px, -10px);
+    height: 30px;
+    width: 430px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.08);
+}
+.h {
+    transform: translate(50px, 10px);
+    font-size: 12px;
+    font-weight: bold;
+}
+.ih {
+    transform: translate(50px, 20px);
+    height: 30px;
+    width: 430px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.08);
+}
+.btn-simpan{
+    transform: translate(150px, 70px);
+    background-color: #059e19cb;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.btn-simpan :hover{
+    background-color: #017410cb;}
+
+.btn-batal, a{
+    transform: translate(200px, 70px);
+    background-color: #d80808cb;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-batal:hover{
+    background-color: #a20606cb;
+}
+.btn-batal a:hover{
+    background-color: #a20606cb;
+}
+.btn-update{
+    transform: translate(150px, 70px);
+    background-color: #059e19cb;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.btn-update:hover{
+    background-color: #017410cb;}
+
+
+</style>
+
+</head>
+<body class="body">
+     <% if (data) { %>
+    <form  class="add-produk-form" action="" method="post">
+    <div class="input">
+        <div id="form">
+            <div class="font1">UPDATE DATA</div>         
+            <div class="jk">Nama Produk<br /></div>
+            <select class="sjk" name="nama_produk" value="<%= data.nama_produk %>" id="nama_produk">
+                <option >--Pilih Nama Produk--</option>
+                <option>Gold</option>
+                <option>Khaga</option>
+                <option>Platinum</option>
+                <option>Pengharum Mobil</option>              
+            </select><br />           
+            <div class="k">Tanggal Masuk<br /></div>
+                <input  class="sk" type="date" name="tgl_masuk" value="<%= data.tgl_masuk %>" id="tgl_masuk" /><br /><br />
+            <div class="h"> Stok Masuk<br /></div>
+                <input  class="ih" type="number" name="stok_masuk" value="<%= data.stok_masuk %>" id="stok_masuk" /><br /><br />
+            <button class="btn-update"> Update </button>
+            
+            <button class="btn-batal"><a href="/barang_masuk">Batal</a></button>
+        </div>        
+    </div>
+    </form>
+    <% } %>     
+</body>
+</html>
